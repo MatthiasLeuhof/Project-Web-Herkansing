@@ -1,0 +1,226 @@
+/* Set all parents to full height */
+html, body,
+.container,
+.cbp-fbscroller,
+.cbp-fbscroller section {
+	height: 100%;
+}
+
+h1 {
+	display: none;
+}
+
+header span {
+	display: none;
+}
+
+/* The nav is fixed on the right side  and we center it by translating it 50%
+(we don't know it's height so we can't use the negative margin trick) */
+.cbp-fbscroller > nav {
+	position: fixed;
+	z-index: 9999;
+	right: 100px;
+	top: 50%;
+	width: 26px;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.cbp-fbscroller > nav a {
+	display: block;
+	position: relative;
+	z-index: 9999;
+	color: transparent;
+	width: 26px;
+	height: 26px;
+	outline: none;
+	margin: 25px 0;
+	border-radius: 50%;
+	border: 4px solid #fff;
+}
+
+.no-touch .cbp-fbscroller > nav a:hover {
+	background: rgba(255,255,255,0.6);
+}
+
+.cbp-fbscroller > nav a.cbp-fbcurrent {
+	background: #fff;
+}
+
+/* background-attachment does the trick */
+.cbp-fbscroller section {
+	position: relative;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.no-touch .cbp-fbscroller section {
+	background-attachment: fixed;
+}
+
+#fbsection1 {
+	background-image: url(../images/Mobile/TreesBackgroundMob.png);
+}
+
+#fbsection2 {
+	background-image: url(../images/Mobile/HelpBackgroundMob1.png);
+}
+
+#fbsection2mob {
+	background-image: url(../images/Mobile/HelpBackgroundMob2.png);
+}
+
+#fbsection3 {
+	background-image: url(../images/Mobile/OgenBackgroundMob1.png);
+}
+
+#fbsection3mob {
+	background-image: url(../images/Mobile/OgenBackgroundMob2.png);
+}
+
+#fbsection4 {
+	background-image: url(../images/Mobile/DarkBackgroundMob.png);
+}
+
+#fbsection5 {
+	background-image: url(../images/Mobile/ManBackgroundMob1.png);
+}
+
+#fbsection5mob {
+	background-image: url(../images/Mobile/ManBackgroundMob2.png);
+}
+
+#fbsection6 {
+	background-image: url(../images/Mobile/HillBackgroundMob.png);
+}
+
+.foreground {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.treeFore {
+	background-image: url(../images/Mobile/TreesForegroundMob.png);
+}
+
+.helpFore {
+	background-image: url(../images/Mobile/HelpForegroundMob1.png);
+}
+
+.helpFore2 {
+	background-image: url(../images/Mobile/HelpForegroundMob2.png);
+}
+
+.eyeFore {
+	background-image: url(../images/Mobile/OgenForegroundMob1.png);
+}
+
+.eyeFore2 {
+	background-image: url(../images/Mobile/OgenForegroundMob2.png);
+}
+
+.darkFore {
+	background-image: url(../images/Mobile/DarkForegroundMob.png);
+}
+
+.manFore {
+	background-image: url(../images/Mobile/ManForegroundMob1.png);
+}
+
+.manFore2 {
+	background-image: url(../images/Mobile/ManForegroundMob2.png);
+}
+
+.hillFore {
+	background-image: url(../images/Mobile/HillForegroundMob.png);
+}
+
+
+@media only screen and (min-width: 52em) {
+
+	#fbsection1 {
+		background-image: url(../images/TreesBackground.png);
+	}
+
+	#fbsection2 {
+		background-image: url(../images/HelpBackground.png);
+	}
+
+	#fbsection2mob {
+		display: none;
+		background-image: url(../images/HelpBackground.png);
+	}
+
+	#fbsection3 {
+		background-image: url(../images/OgenBackground.png);
+	}
+
+	#fbsection3mob {
+		display: none;
+		background-image: url(../images/OgenBackground.png);
+	}
+
+	#fbsection4 {
+		background-image: url(../images/DarkBackground.png);
+	}
+
+	#fbsection5 {
+		background-image: url(../images/ManBackground.png);
+	}
+
+	#fbsection5mob {
+		display: none;
+		background-image: url(../images/ManBackground.png);
+	}
+
+	#fbsection6 {
+		background-image: url(../images/HillBackground.png);
+	}
+
+
+	.treeFore {
+		background-image: url(../images/TreesForeground.png);
+	}
+
+	.helpFore {
+		background-image: url(../images/HelpForeground.png);
+	}
+
+	.helpFore2 {
+		display: none;
+		background-image: url(../images/HelpForeground.png);
+	}
+
+	.eyeFore {
+		background-image: url(../images/OgenForeground.png);
+	}
+
+	.eyeFore2 {
+		display: none;
+		background-image: url(../images/OgenForeground.png);
+	}
+
+	.darkFore {
+		background-image: url(../images/DarkForeground.png);
+	}
+
+	.manFore {
+		background-image: url(../images/ManForeground.png);
+	}
+
+	.manFore2 {
+		display: none;
+		background-image: url(../images/ManForeground.png);
+	}
+
+	.hillFore {
+		background-image: url(../images/HillForeground.png);
+	}
+}
