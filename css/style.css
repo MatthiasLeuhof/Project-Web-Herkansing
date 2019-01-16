@@ -444,6 +444,28 @@ header > nav > ul > li:nth-child(2) > a::before {
 	background-image: url('images/leeslijst.svg');
 }
 
+header > nav > ul > li:nth-child(2) #leeslijst::after {
+	content: "+1";
+	color: white;
+	padding: .5rem;
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	background-color: #E6B517;
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	opacity: 0;
+	transform: translateX(-50%);
+	pointer-events: none;
+	transition: all .3s ease-in-out;
+}
+
+header > nav > ul > li:nth-child(2) #leeslijst.save-to-list::after {
+	top: 120%;
+	opacity: 1;
+}
+
 header > nav > ul > li:last-child > a::before {
 	background-image: url('images/login.svg');
 }
@@ -700,11 +722,23 @@ main > section:nth-child(3) > * {
 
 main > section:nth-child(3) > *:not(header) {
 	background-color: #FFFFFF;
+	color: #FFFFFF;
 	width: 100%;
 	height: 300px;
 	max-width: calc(50% - 0.65rem);
 	margin-bottom: 1.3rem;
 }
+
+main > section:nth-child(3) > *:not(header) a {
+	color: #ddd;
+	transition: color .15s ease-in-out;
+}
+
+main > section:nth-child(3) > *:not(header) a:hover {
+	color: #fff;
+}
+
+
 
 main > section:nth-child(3) > section:nth-of-type(odd) {
 	margin-right: 1.3rem;
@@ -738,6 +772,112 @@ main > section:nth-child(3) > *:not(header) > a:last-child {
 	transition: all .15s ease-in-out;
 }
 
+
+
+
+.checkmark {
+	position: absolute;
+	padding: 0;
+	margin: 0 auto;
+	height: 50px;
+	width: 50px;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transform: translateY(25%);
+	transition: all .15s ease-in;
+}
+
+.save-checkmark {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+main > section:nth-child(3) > *:not(header) .save-plus {
+	transform: translateY(-25%);
+	opacity: 0;
+	z-index: -1;
+}
+
+.download-button {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	position: absolute;
+	right: 1rem;
+	top: calc(1rem+50px+.5rem);
+	background-color: transparent;
+	border: 4px solid #E6B517;
+	box-shadow: inset 0 -0.125rem 0 #E6B517;
+}
+
+.download-button:focus {
+	outline: none;
+}
+
+.download-button:hover {
+	box-shadow: inset 0 -0.125rem 0 #E6B517;
+}
+
+.download-button svg {
+	pointer-events: none;
+	position: absolute;
+	display: inline-block;
+	top: 50%;
+	left: 50%;
+	margin: 0 auto;
+	padding: 0;
+	transform: translate(-50%, -50%);
+}
+
+.download-button svg path {
+	stroke: #FFF;
+}
+
+.downloaded {
+	animation: downloading 3s forwards;
+}
+
+.add-to-list {
+	pointer-events: none;
+}
+.add-to-list img {
+	pointer-events: all;
+}
+
+@keyframes downloading {
+	0% {
+		box-shadow: inset 0 -0.125rem 0 #E6B517;
+	}
+	10% {
+		box-shadow: inset 0 -0.725rem 0 #E6B517;
+	}
+	40% {
+		box-shadow: inset 0 -1.125rem 0 #E6B517;
+	}
+	60% {
+		box-shadow: inset 0 -1.725rem 0 #E6B517;
+	}
+	75% {
+		box-shadow: inset 0 -2.125rem 0 #E6B517;
+	}
+	100% {
+		box-shadow: inset 0 -3.125rem 0 #E6B517;
+	}
+}
+
+
+
+.progress-button button:hover {
+	background-color: #E6B517;
+	color: #fff;
+	box-shadow: none;
+}
+
+
+
+
+
 main > section:nth-child(3) > *:not(header) > a:last-child:hover {
 	background-color: #FFC917;
 	transform: scale(1.1);
@@ -750,25 +890,86 @@ main > section:nth-child(3) > *:not(header) img {
 	border-radius: 50%;
 	height: 50px;
 	width: 50px;
+	opacity: 1;
+	transform: translateY(0);
+	transition: all .15 ease-in-out;
 }
 
-/* Experimental Shit here */
+main > section:nth-child(3) > *:not(header) > h2 {
+	max-width: 80%;
+}
 
-/* main > section:nth-child(3) > *:not(header) > h2 a {
-	display: block;
+main > section:nth-child(3) > *:not(header) > p:first-of-type {
+	display: inline-block;
 	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-} */
+	bottom: 0;
+	left: 1.3rem;
+}
 
-/* main > section:nth-child(3) > *:not(header) p:nth-child(3) {
+main > section:nth-child(3) > *:not(header) > p:last-of-type {
+	display: inline-block;
 	position: absolute;
-	bottom: 10px;
-	left: 10px;
-	z-index: 2;
-} */
+	bottom: 0;
+	right: 1.3rem;
+}
+
+/* Story background images */
+
+main > section:nth-child(3) > section:nth-child(2) {
+	background-image: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/hongerwinter-thumb.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+main > section:nth-child(3) > section:nth-child(3) {
+	background-image: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/droom-thumb.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+main > section:nth-child(3) > section:nth-child(4) {
+	background-image: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/schoorsteen-thumb.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+main > section:nth-child(3) > section:nth-child(5) {
+	background-image: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/kater.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+main > section:nth-child(3) > section:nth-child(6) {
+	background-image: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/paranoia.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+main > section:nth-child(3) > section:nth-child(7) {
+	background-image: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/managerstaal.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+main > section:nth-child(3) > section:nth-child(8) {
+	background-image: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/de-cock-en-het-raadsel-van-het-verdwenen-boek.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+main > section:nth-child(3) > section:nth-child(9) {
+	background-image: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/nacht-thumb.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
 
 
 
@@ -838,6 +1039,11 @@ body > footer {
 #inloggen form label:last-child {
 	align-self: flex-end;
 }
+
+#inloggen input:invalid {
+	color: red;
+}
+
 
 
 /* -----------------------------------------------------------------------------
