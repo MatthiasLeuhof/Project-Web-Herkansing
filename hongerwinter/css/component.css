@@ -74,10 +74,12 @@ header span {
 }
 
 #fbsection3 {
+	/* min-height: 1200px; */
 	background-image: url(../images/Mobile/OgenBackgroundMob1.png);
 }
 
 #fbsection3mob {
+	/* min-height: 1200px; */
 	background-image: url(../images/Mobile/OgenBackgroundMob2.png);
 }
 
@@ -146,10 +148,12 @@ header span {
 @media only screen and (min-width: 52em) {
 
 	#fbsection1 {
+		min-height: 800px;
 		background-image: url(../images/TreesBackground.png);
 	}
 
 	#fbsection2 {
+		min-height: 800px;
 		background-image: url(../images/HelpBackground.png);
 	}
 
@@ -159,6 +163,7 @@ header span {
 	}
 
 	#fbsection3 {
+		min-height: 1300px;
 		background-image: url(../images/OgenBackground.png);
 	}
 
@@ -168,10 +173,12 @@ header span {
 	}
 
 	#fbsection4 {
+		min-height: 800px;
 		background-image: url(../images/DarkBackground.png);
 	}
 
 	#fbsection5 {
+		min-height: 800px;
 		background-image: url(../images/ManBackground.png);
 	}
 
@@ -181,6 +188,7 @@ header span {
 	}
 
 	#fbsection6 {
+		min-height: 800px;
 		background-image: url(../images/HillBackground.png);
 	}
 

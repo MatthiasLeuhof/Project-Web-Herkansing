@@ -730,15 +730,15 @@ main > section:nth-child(3) > *:not(header) {
 }
 
 main > section:nth-child(3) > *:not(header) a {
-	color: #ddd;
+	color: #eee;
+	mix-blend-mode: exclusion;
 	transition: color .15s ease-in-out;
 }
 
 main > section:nth-child(3) > *:not(header) a:hover {
-	color: #fff;
+	color: #ddd;
+	mix-blend-mode: exclusion;
 }
-
-
 
 main > section:nth-child(3) > section:nth-of-type(odd) {
 	margin-right: 1.3rem;
@@ -768,12 +768,12 @@ main > section:nth-child(3) > *:not(header) > a:last-child {
 	position: absolute;
 	right: 1rem;
 	top: 1rem;
+	mix-blend-mode: unset !important;
 	transform: scale(1);
 	transition: all .15s ease-in-out;
 }
 
-
-
+/* Micro-interacties */
 
 .checkmark {
 	position: absolute;
@@ -831,7 +831,7 @@ main > section:nth-child(3) > *:not(header) .save-plus {
 }
 
 .download-button svg path {
-	stroke: #FFF;
+	stroke: #eee;
 }
 
 .downloaded {
@@ -866,17 +866,11 @@ main > section:nth-child(3) > *:not(header) .save-plus {
 	}
 }
 
-
-
 .progress-button button:hover {
 	background-color: #E6B517;
 	color: #fff;
 	box-shadow: none;
 }
-
-
-
-
 
 main > section:nth-child(3) > *:not(header) > a:last-child:hover {
 	background-color: #FFC917;
@@ -922,11 +916,21 @@ main > section:nth-child(3) > section:nth-child(2) {
 	background-size: cover;
 }
 
+main > section:nth-child(3) > section:nth-child(2):hover {
+	background-image: url('images/hongerwinter-thumb.png');
+	color: black !important;
+}
+
 main > section:nth-child(3) > section:nth-child(3) {
 	background-image: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/droom-thumb.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+}
+
+main > section:nth-child(3) > section:nth-child(3):hover {
+	background-image: url('images/droom-thumb.png');
+	color: black !important;
 }
 
 main > section:nth-child(3) > section:nth-child(4) {
@@ -936,11 +940,20 @@ main > section:nth-child(3) > section:nth-child(4) {
 	background-size: cover;
 }
 
+main > section:nth-child(3) > section:nth-child(4):hover {
+	background-image: url('images/schoorsteen-thumb.png');
+}
+
 main > section:nth-child(3) > section:nth-child(5) {
 	background-image: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/kater.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+}
+
+main > section:nth-child(3) > section:nth-child(5):hover {
+	background-image: url('images/kater.png');
+	color: black !important;
 }
 
 main > section:nth-child(3) > section:nth-child(6) {
@@ -950,11 +963,20 @@ main > section:nth-child(3) > section:nth-child(6) {
 	background-size: cover;
 }
 
+main > section:nth-child(3) > section:nth-child(6):hover {
+	background-image: url('images/paranoia.png');
+}
+
 main > section:nth-child(3) > section:nth-child(7) {
 	background-image: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/managerstaal.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+}
+
+main > section:nth-child(3) > section:nth-child(7):hover {
+	background-image: url('images/managerstaal.png');
+	color: black !important;
 }
 
 main > section:nth-child(3) > section:nth-child(8) {
@@ -964,6 +986,10 @@ main > section:nth-child(3) > section:nth-child(8) {
 	background-size: cover;
 }
 
+main > section:nth-child(3) > section:nth-child(8):hover {
+	background-image: url('images/de-cock-en-het-raadsel-van-het-verdwenen-boek.png');
+}
+
 main > section:nth-child(3) > section:nth-child(9) {
 	background-image: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/nacht-thumb.png');
 	background-repeat: no-repeat;
@@ -971,7 +997,21 @@ main > section:nth-child(3) > section:nth-child(9) {
 	background-size: cover;
 }
 
+main > section:nth-child(3) > section:nth-child(9):hover {
+	background-image: url('images/nacht-thumb.png');
+}
 
+/* -----------------------------------------------------------------------------
+	Tiles hover effects
+----------------------------------------------------------------------------- */
+.tile {
+	transition: all .3s ease;
+}
+
+.tile:hover {
+	transform: scale(1.05);
+	/* background-image: url('images/hongerwinter-thumb.png') !important; */
+}
 
 /* -----------------------------------------------------------------------------
 	Footer

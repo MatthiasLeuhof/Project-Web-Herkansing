@@ -6,9 +6,20 @@ var plusImage = document.querySelectorAll('.add-to-list img');
 var checkmarkImage = document.querySelectorAll('.add-to-list svg');
 var addButtons = document.querySelectorAll(".add-to-list");
 
+
+
+// Add click events for every save and download button
+
 for (var i = 0; i<downloadButtons.length; i++) {
   downloadButtons[i].addEventListener("click", downloadStory);
 }
+
+for(var i = 0; i<addButtons.length; i++) {
+  addButtons[i].addEventListener("click", addToList);
+}
+
+
+// Make an animation play when clicking the download button
 
 function downloadStory(e) {
   e.preventDefault();
@@ -23,24 +34,12 @@ function downloadStory(e) {
 
 
 
-
-
-
-
-
-
-
-
-for(var i = 0; i<addButtons.length; i++) {
-  addButtons[i].addEventListener("click", addToList);
-}
-
-
+// Make the icon change when someone clicks on the button
 
 function addToList(e) {
   e.preventDefault();
 
-  for(var i = 0; i<plusImage.length; i++) {
+  for(var i = 0; i<plusImatwge.length; i++) {
     if (plusImage[i] === e.target) {
       plusImage[i].classList.toggle("save-plus");
       checkmarkImage[i].classList.toggle("save-checkmark");
